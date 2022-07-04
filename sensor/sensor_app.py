@@ -1,7 +1,8 @@
 # Runner script for all modules
+
+
 from datetime import date, datetime
 from statistics import mean
-
 from load_data import load_sensor_data
 from house_info import HouseInfo
 from temperature_info import TemperatureData
@@ -44,7 +45,6 @@ print("\tAverage: {} humidity".format(mean(recs)))
 particle_data = ParticleData(data)
 recs = particle_data.get_data_by_area(rec_area=test_area)
 print("\nHouse Particle sensor records for area {} = {}".format(test_area, len(recs)))
-
 concentrations = particle_data.get_data_concentrations(data=recs)
 print("\tGood Air Quality Recs: {}".format(concentrations["good"]))
 print("\tModerate Air Quality Recs: {}".format(concentrations["moderate"]))
